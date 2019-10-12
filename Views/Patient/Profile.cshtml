@@ -1,0 +1,134 @@
+﻿@model HSP.Models.Patient
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+
+<div class="row" style="margin-bottom:30px;">
+    <div class="col-sm-12">
+        
+        <div class="col-sm-12 ">
+            <img src="~/Content/Images/profile.png" class="img-circle center-block" style="display:block" />
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <table class="col-sm-12 table table-bordered table-striped table-hover">
+        <tr>
+            <td class="col-lg-3 ">User Name</td>
+            <td>
+                @Html.DisplayFor(model => model.UserName, new { @class = "text-info" })
+            </td>
+        </tr>
+
+        <tr>
+            <td class="col-lg-3 ">Email</td>
+            <td>
+                @Html.DisplayFor(model => model.Email, new { @class = "text-info" })
+            </td>
+        </tr>
+        <tr>
+            <td class="col-lg-3 ">Phone Number</td>
+            <td>
+                @Html.DisplayFor(model => model.PhoneNumber, new { @class = "text-info" })
+            </td>
+        </tr>
+        <tr>
+            <td class="col-lg-3 ">Job</td>
+            <td>
+                @Html.DisplayFor(model => model.Job, new { @class = "text-info" })
+            </td>
+        </tr>
+        <tr>
+            <td class="col-lg-3 ">Age</td>
+            @{
+                var BD = Model.BirthDate.Year;
+                var year = DateTime.Now.Year-Model.BirthDate.Year;
+                    <td class="col-lg-3 ">@year</td>
+            }
+
+        </tr>
+        <tr>
+            <td class="col-lg-3 ">Birthdate</td>
+            <td>
+                @Html.DisplayFor(model => model.BirthDate, new { @class = "text-info" })
+            </td>
+        </tr>
+        <tr>
+            <td class="col-lg-3 ">Address</td>
+            <td>
+                @Html.DisplayFor(model => model.Address, new { @class = "text-info" })
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+
+<!--
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+
+
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+
+    </dl>
+</div>
+-->
+<p>
+    @Html.ActionLink("Edit Profile", "Edit") |
+        @Html.ActionLink("Change Password", "ChangePassword")
+</p>
