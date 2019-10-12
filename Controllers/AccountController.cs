@@ -13,6 +13,7 @@ using HSP.Models;
 
 namespace HPS.Controllers
 {
+    [HandleError]
     [Authorize]
     public class AccountController : Controller
     {
