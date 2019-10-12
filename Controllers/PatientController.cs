@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace HPS.Controllers
 {
+    [HandleError]
     [Authorize]
     public class PatientController : Controller
     {
