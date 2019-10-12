@@ -10,6 +10,7 @@ using HPS.Models;
 
 namespace HPS.Controllers
 {
+    [HandleError]
     [Authorize]
     public class ManageController : Controller
     {
