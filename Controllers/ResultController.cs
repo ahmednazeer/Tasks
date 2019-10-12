@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace HPS.Controllers
 {
+    [HandleError]
     [Authorize]
     public class ResultController : Controller
     {
